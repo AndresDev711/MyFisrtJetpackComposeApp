@@ -17,7 +17,7 @@ fun MainScreen(navController: NavHostController) {
       .fillMaxSize()
       .background(Color.Cyan)
   ) {
-    Text(text = "Main", Modifier.clickable { navController.navigate("secondScreen") })
+    Text(text = "Main", Modifier.clickable { navController.navigate(Routes.SecondScreen.route) })
   }
 }
 
@@ -28,7 +28,7 @@ fun SecondScreen(navController: NavHostController) {
       .fillMaxSize()
       .background(Color.Red)
   ) {
-    Text(text = "Second", Modifier.clickable { navController.navigate("thirdScreen") })
+    Text(text = "Second", Modifier.clickable { navController.navigate(Routes.ThirdScreen.route) })
   }
 }
 

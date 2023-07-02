@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.andre.dev.demo.firstappcompose.navigation.MainScreen
+import com.andre.dev.demo.firstappcompose.navigation.Routes
 import com.andre.dev.demo.firstappcompose.navigation.SecondScreen
 import com.andre.dev.demo.firstappcompose.navigation.ThirdScreen
 import com.andre.dev.demo.firstappcompose.ui.theme.FirstAppComposeTheme
@@ -25,10 +26,13 @@ class MainActivity : ComponentActivity() {
       FirstAppComposeTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
           val navigationController = rememberNavController()
-          NavHost(navController = navigationController, startDestination = "mainScreen") {
-            composable("mainScreen") { MainScreen(navigationController) }
-            composable("secondScreen") { SecondScreen(navigationController) }
-            composable("thirdScreen") { ThirdScreen(navigationController) }
+          NavHost(
+            navController = navigationController,
+            startDestination = Routes.MainScreen.route
+          ) {
+            composable(Routes.MainScreen.route) { MainScreen(navigationController) }
+            composable(Routes.SecondScreen.route) { SecondScreen(navigationController) }
+            composable(Routes.ThirdScreen.route) { ThirdScreen(navigationController) }
           }
         }
       }
